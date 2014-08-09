@@ -1,0 +1,19 @@
+# Bundler
+/.bundle/
+*.bundle
+/Gemfile.lock
+
+# YARD
+/.yardoc
+/_yardoc/
+/doc/
+
+# Coverage
+/coverage/
+/spec/reports/
+
+# RubyGems
+/pkg/
+
+# Temp
+/tmp/
