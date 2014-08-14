@@ -34,7 +34,9 @@ describe Raheui::IO do
     end
 
     it 'reads an unicode character' do
-      [*10.times.map { rand(160..0x10ffff).chr(Encoding::UTF_8) },
+      [*10.times.map { rand(160..0xD7FF).chr(Encoding::UTF_8) },
+       # Range 0xD800..0xDFFF is used by UTF-16.
+       *10.times.map { rand(0xE000..0x10FFFF).chr(Encoding::UTF_8) },
        '가', 'あ', '漢', '　', 'å', '★'].each do |chr|
         allow($stdin).to receive(:getc).with(no_args).once
                                        .and_return(chr)
