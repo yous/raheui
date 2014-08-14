@@ -5,3 +5,7 @@ AllCops:
     - '**/*.gemspec'
     - '**/Gemfile'
     - '**/Rakefile'
+
+Style/AsciiComments:
+  Exclude:
+    - 'lib/raheui/io.rb'
