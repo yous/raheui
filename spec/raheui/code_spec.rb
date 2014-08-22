@@ -64,12 +64,9 @@ describe Raheui::Code do
     subject { Raheui::Code.new('') }
     let(:consonants) { subject.method(:consonants) }
     before(:example) do
-      stub_const('INITIAL_CONSONANTS',
-                 Raheui::Code.const_get(:INITIAL_CONSONANTS))
-      stub_const('MEDIAL_CONSONANTS',
-                 Raheui::Code.const_get(:MEDIAL_CONSONANTS))
-      stub_const('FINAL_CONSONANTS',
-                 Raheui::Code.const_get(:FINAL_CONSONANTS))
+      stub_const('INITIAL_CONSONANTS', Raheui::Code::INITIAL_CONSONANTS)
+      stub_const('MEDIAL_CONSONANTS', Raheui::Code::MEDIAL_CONSONANTS)
+      stub_const('FINAL_CONSONANTS', Raheui::Code::FINAL_CONSONANTS)
     end
 
     it 'returns consonants of Korean alphabet' do

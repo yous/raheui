@@ -8,7 +8,6 @@ module Raheui
     INITIAL_CONSONANTS = 19
     MEDIAL_CONSONANTS = 21
     FINAL_CONSONANTS = 28
-    private_constant :INITIAL_CONSONANTS, :MEDIAL_CONSONANTS, :FINAL_CONSONANTS
 
     # Initialize a Code. Separate Korean alphabet into consonants.
     #
