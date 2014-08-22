@@ -1,12 +1,7 @@
 # encoding: utf-8
 require 'spec_helper'
+require 'raheui/shared_store'
 
 describe Raheui::Port do
-  describe '#push' do
-    it { is_expected.to respond_to(:push) }
-  end
-
-  describe '#pop' do
-    it { is_expected.to respond_to(:pop) }
-  end
+  it_behaves_like 'a store'
 end

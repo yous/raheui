@@ -1,10 +1,11 @@
 # encoding: utf-8
 require 'spec_helper'
+require 'raheui/shared_store'
 
 describe Raheui::Queue do
-  describe '#push' do
-    it { is_expected.to respond_to(:push) }
+  it_behaves_like 'a store'
 
+  describe '#push' do
     context 'with no elements' do
       let(:element) { rand(10) }
 
@@ -25,11 +26,7 @@ describe Raheui::Queue do
   end
 
   describe '#pop' do
-    it { is_expected.to respond_to(:pop) }
-
     context 'with no elements' do
-      it { expect(subject.pop).to be(nil) }
-
       it 'returns first pushed element' do
         subject.push(42)
         expect(subject.pop).to be(42)
@@ -81,13 +78,6 @@ describe Raheui::Queue do
   end
 
   describe '#push_dup' do
-    context 'with no elements' do
-      it "doesn't push" do
-        subject.push_dup
-        expect(subject.instance_variable_get(:@store).size).to be_zero
-      end
-    end
-
     context 'with one element' do
       let(:element) { rand(10) }
 
@@ -110,13 +100,6 @@ describe Raheui::Queue do
   end
 
   describe '#swap' do
-    context 'with no elements' do
-      it "doesn't modify store" do
-        subject.swap
-        expect(subject.instance_variable_get(:@store).size).to be_zero
-      end
-    end
-
     context 'with one element' do
       let(:element) { rand(10) }
 
