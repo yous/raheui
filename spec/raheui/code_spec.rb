@@ -64,9 +64,12 @@ describe Raheui::Code do
     subject { Raheui::Code.new('') }
     let(:consonants) { subject.method(:consonants) }
     before(:example) do
-      stub_const('INITIAL_COUNT', Raheui::Code.const_get(:INITIAL_COUNT))
-      stub_const('MEDIAL_COUNT', Raheui::Code.const_get(:MEDIAL_COUNT))
-      stub_const('FINAL_COUNT', Raheui::Code.const_get(:FINAL_COUNT))
+      stub_const('INITIAL_CONSONANTS',
+                 Raheui::Code.const_get(:INITIAL_CONSONANTS))
+      stub_const('MEDIAL_CONSONANTS',
+                 Raheui::Code.const_get(:MEDIAL_CONSONANTS))
+      stub_const('FINAL_CONSONANTS',
+                 Raheui::Code.const_get(:FINAL_CONSONANTS))
     end
 
     it 'returns consonants of Korean alphabet' do
@@ -74,16 +77,18 @@ describe Raheui::Code do
         # 가
         [0, 0, 0],
         # 힣
-        [INITIAL_COUNT - 1, MEDIAL_COUNT - 1, FINAL_COUNT - 1]
+        [INITIAL_CONSONANTS - 1, MEDIAL_CONSONANTS - 1, FINAL_CONSONANTS - 1]
       ]
       examples.concat(10.times.map do
-        [rand(INITIAL_COUNT), rand(MEDIAL_COUNT), rand(FINAL_COUNT)]
+        [rand(INITIAL_CONSONANTS),
+         rand(MEDIAL_CONSONANTS),
+         rand(FINAL_CONSONANTS)]
       end)
       examples.each do |initial, medial, final|
         alphabet = (
           0xAC00 +
-            initial * MEDIAL_COUNT * FINAL_COUNT +
-            medial * FINAL_COUNT +
+            initial * MEDIAL_CONSONANTS * FINAL_CONSONANTS +
+            medial * FINAL_CONSONANTS +
             final
         ).chr(Encoding::UTF_8)
         expect(consonants.call(alphabet)).to match_array(
@@ -92,7 +97,10 @@ describe Raheui::Code do
     end
 
     it 'returns an empty array for non-Korean alphabet' do
-      examples = [*0..127, 0xAC00 + INITIAL_COUNT * MEDIAL_COUNT * FINAL_COUNT]
+      examples = [
+        *0..127,
+        0xAC00 + INITIAL_CONSONANTS * MEDIAL_CONSONANTS * FINAL_CONSONANTS
+      ]
       examples.concat(%w(あ 漢 　 å ★).map(&:ord))
       examples.each do |ch|
         expect(consonants.call(ch)).to match_array([])

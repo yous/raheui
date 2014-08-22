@@ -5,10 +5,10 @@ module Raheui
     extend Forwardable
 
     # Count of initial, medial and final consonant of Korean alphabet.
-    INITIAL_COUNT = 19
-    MEDIAL_COUNT = 21
-    FINAL_COUNT = 28
-    private_constant :INITIAL_COUNT, :MEDIAL_COUNT, :FINAL_COUNT
+    INITIAL_CONSONANTS = 19
+    MEDIAL_CONSONANTS = 21
+    FINAL_CONSONANTS = 28
+    private_constant :INITIAL_CONSONANTS, :MEDIAL_CONSONANTS, :FINAL_CONSONANTS
 
     # Initialize a Code. Separate Korean alphabet into consonants.
     #
@@ -82,9 +82,9 @@ module Raheui
       case ch
       when '가'..'힣'
         index = ch.ord - '가'.ord
-        [index / (MEDIAL_COUNT * FINAL_COUNT),
-         (index / FINAL_COUNT) % MEDIAL_COUNT,
-         index % FINAL_COUNT]
+        [index / (MEDIAL_CONSONANTS * FINAL_CONSONANTS),
+         (index / FINAL_CONSONANTS) % MEDIAL_CONSONANTS,
+         index % FINAL_CONSONANTS]
       else
         []
       end
