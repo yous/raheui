@@ -9,3 +9,5 @@ AllCops:
 Style/AsciiComments:
   Exclude:
     - 'lib/raheui/io.rb'
+    - 'lib/raheui/code.rb'
+    - 'spec/raheui/code_spec.rb'
