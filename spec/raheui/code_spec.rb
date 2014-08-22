@@ -6,6 +6,16 @@ describe Raheui::Code do
     subject(:code) { Raheui::Code.new(code_str) }
     let(:consonants) { code.method(:consonants) }
 
+    it 'has width which is maximum line length of code with minimum value 1' do
+      width = code_str.lines.map { |line| line.chomp.size }.max || 1
+      expect(code.width).to be(width)
+    end
+
+    it 'has height which is number of lines with minimum value 1' do
+      height = [code_str.lines.count, 1].max
+      expect(code.height).to be(height)
+    end
+
     describe '#[]' do
       it 'returns item at given position' do
         code_str.lines.each_with_index do |line, y|
@@ -16,26 +26,28 @@ describe Raheui::Code do
       end
 
       it 'returns item at given negative position' do
-        max_y = code_str.lines.count
         code_str.lines.each_with_index do |line, y|
           max_x = line.chomp.chars.count
           line.chomp.chars.each_with_index do |ch, x|
             expected = consonants.call(ch)
             expect(code[x - max_x, y]).to match_array(expected)
-            expect(code[x, y - max_y]).to match_array(expected)
-            expect(code[x - max_x, y - max_y]).to match_array(expected)
+            expect(code[x, y - code.height]).to match_array(expected)
+            expect(code[x - max_x, y - code.height]).to match_array(expected)
           end
         end
       end
 
       it 'returns an empty array if there is no item at given position' do
-        max_x = code_str.lines.max_by { |line| line.chomp.size }.size
-        max_y = code_str.lines.count
-        expect(code[0, max_y]).to match_array([])
-        expect(code[max_x, 0]).to match_array([])
-        expect(code[max_x, max_y]).to match_array([])
+        expect(code[0, code.height]).to match_array([])
+        expect(code[code.width, 0]).to match_array([])
+        expect(code[code.width, code.height]).to match_array([])
       end
     end
+  end
+
+  describe Raheui::Code, 'with empty code' do
+    let(:code_str) { '' }
+    it_behaves_like 'a code'
   end
 
   describe Raheui::Code, 'with aheui code' do

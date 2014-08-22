@@ -9,7 +9,14 @@ module Raheui
     MEDIAL_CONSONANTS = 21
     FINAL_CONSONANTS = 28
 
-    # Initialize a Code. Separate Korean alphabet into consonants.
+    # Returns the Integer width of code.
+    attr_reader :width
+
+    # Returns the Integer height of code.
+    attr_reader :height
+
+    # Initialize a Code. Separate Korean alphabet into consonants. Calculate the
+    # width and height of code.
     #
     # str - The String raw text of code.
     #
@@ -32,6 +39,13 @@ module Raheui
     def initialize(str)
       @matrix = str.lines.map do |line|
         line.chomp.chars.map { |ch| consonants(ch) }
+      end
+      @height = @matrix.size
+      if @height.zero?
+        @width = 1
+        @height = 1
+      else
+        @width = @matrix.map(&:size).max
       end
     end
 
