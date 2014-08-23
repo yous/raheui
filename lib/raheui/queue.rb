@@ -2,8 +2,6 @@
 module Raheui
   # Queue class for Aheui.
   class Queue < Store
-    extend Forwardable
-
     # Delegates push to @store.
     def_delegator :@store, :push
 

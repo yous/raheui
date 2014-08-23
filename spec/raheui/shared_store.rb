@@ -18,7 +18,18 @@ shared_examples 'a store' do
     context 'with no elements' do
       it "doesn't push" do
         subject.push_dup
-        expect(subject.instance_variable_get(:@store).size).to be_zero
+        expect(subject.size).to be_zero
+      end
+    end
+  end
+
+  describe '#size' do
+    context 'with no elements' do
+      it { expect(subject.size).to be_zero }
+
+      it 'returns 0 after pop' do
+        subject.pop
+        expect(subject.size).to be_zero
       end
     end
   end
@@ -27,7 +38,7 @@ shared_examples 'a store' do
     context 'with no elements' do
       it "doesn't modify store" do
         subject.swap
-        expect(subject.instance_variable_get(:@store).size).to be_zero
+        expect(subject.size).to be_zero
       end
     end
   end

@@ -62,6 +62,12 @@ describe Raheui::Store do
     end
   end
 
+  describe '#size' do
+    it 'should respond to #size' do
+      expect(Raheui::Store.instance_methods(false)).to include(:size)
+    end
+  end
+
   describe '#push_dup' do
     it 'should respond to #push_dup' do
       expect(Raheui::Store.instance_methods(false)).to include(:push_dup)

@@ -3,8 +3,13 @@ module Raheui
   # Base Store class for Aheui. Every child classes should implement push and
   # pop method.
   class Store
+    extend Forwardable
+
     BASE_METHODS = [:push, :pop]
     private_constant :BASE_METHODS
+
+    # Delegates size to @store.
+    def_delegator :@store, :size
 
     # Initialize a Stack.
     def initialize
@@ -14,12 +19,12 @@ module Raheui
 
     # Push the last element to Store.
     def push_dup
-      push(@store.last) if @store.size > 0
+      push(@store.last) if size > 0
     end
 
     # Swap the last two elements of Store.
     def swap
-      @store[-1], @store[-2] = @store[-2], @store[-1] if @store.size > 1
+      @store[-1], @store[-2] = @store[-2], @store[-1] if size > 1
     end
 
     private
