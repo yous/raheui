@@ -331,6 +331,8 @@ describe Raheui::Runner, 'with ssangsiot.aheui' do
 
   let(:result) { '320320320320320320320320320' }
   let(:exit_code) { 0 }
+
+  it_behaves_like 'a runner'
 end
 
 describe Raheui::Runner, 'with storage.aheui' do
