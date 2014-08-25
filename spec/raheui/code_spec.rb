@@ -92,7 +92,7 @@ describe Raheui::Code do
         [rand(INITIAL_CONSONANTS),
          rand(MEDIAL_CONSONANTS),
          rand(FINAL_CONSONANTS)]
-      end)
+      end.uniq)
       examples.each do |initial, medial, final|
         alphabet = (
           0xAC00 +

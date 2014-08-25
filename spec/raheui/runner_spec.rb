@@ -6,26 +6,46 @@ shared_examples 'a runner' do
   let(:code) { Raheui::Code.new(source) }
   let(:output) { $stdout.string }
 
-  before(:example) { $stdout = StringIO.new }
-  after(:example) { $stdout = STDOUT }
+  before(:example) do
+    $stdin = StringIO.new
+    $stdout = StringIO.new
+  end
 
-  it 'returns exit code and prints expected output' do
+  after(:example) do
+    $stdin = STDIN
+    $stdout = STDOUT
+  end
+
+  it 'accepts input, prints expected output and returns exit code' do
+    if defined?(inputs)
+      inputs.each do |line|
+        $stdin.puts line
+      end
+      $stdin.rewind
+    end
     expect(runner.run).to be(exit_code)
     expect(output).to eq(result)
   end
 end
 
 describe Raheui::Runner, 'with bieup.aheui' do
+  # rubocop:disable Metrics/LineLength
   let(:source) { <<-END }
 숭
 박반받발밤밥밧밪밫밬밭붚
 뭉멍멍멍멍멍멍멍멍멍멍멍
 밖밗밙밚밝밞밟밠밡밢밣밦붔
 뭉멍멍멍멍멍멍멍멍멍멍멍멍
+방붛
+뭉멍
 희
-  END
 
-  let(:result) { '2235442343444455799799864' }
+ㅂ에 ㅇ받침이 있으면 입력받은 숫자를, ㅎ받침이 있으면 입력받은 문자의 유니코드 코드값을 저장공간에 집어넣습니다. 단, ㅂ의 경우 나머지 받침이 있으면 그 받침을 구성하는 선의 수에 따른 값을 집어넣습니다. 받침이 없으면 0을 집어넣습니다.
+  END
+  # rubocop:enable Metrics/LineLength
+
+  let(:inputs) { %w(3 밯) }
+  let(:result) { '2235442343444455799799864348175' }
   let(:exit_code) { 0 }
 
   it_behaves_like 'a runner'
@@ -281,6 +301,36 @@ describe Raheui::Runner, 'with ssangdigeut.aheui' do
   let(:exit_code) { 0 }
 
   it_behaves_like 'a runner'
+end
+
+describe Raheui::Runner, 'with ssangsiot.aheui' do
+  # rubocop:disable Metrics/LineLength
+  let(:source) { <<-END }
+아바싹반싼받싿우
+우멍석멍선멍섣어
+아바쌀반쌈받쌉우
+우멍설멍섬멍섭어
+아바쌋반쌍받쌎우
+우멍섯멍성멍섲어
+아바쌏반쌐받쌑우
+우멍섳멍섴멍섵어
+아바쌒반싺받싻우
+우멍섶멍섞멍섟어
+아바싽반싾받쌁우
+우멍섡멍섢멍섥어
+아바쌂반쌃받쌄우
+우멍섦멍섧멍섨어
+아바쌅반쌆받쌇우
+우멍섩멍섪멍섫어
+아바쌊반쌌받싸우
+희멍섮멍섰멍서어
+
+ㅆ은 이동 명령으로 저장공간에서 값 하나를 뽑아내서 받침이 나타내는 저장공간에 그 값을 집어 넣습니다.
+  END
+  # rubocop:enable Metrics/LineLength
+
+  let(:result) { '320320320320320320320320320' }
+  let(:exit_code) { 0 }
 end
 
 describe Raheui::Runner, 'with storage.aheui' do
