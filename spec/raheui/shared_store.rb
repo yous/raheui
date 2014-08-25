@@ -23,23 +23,23 @@ shared_examples 'a store' do
     end
   end
 
-  describe '#size' do
-    context 'with no elements' do
-      it { expect(subject.size).to be_zero }
-
-      it 'returns 0 after pop' do
-        subject.pop
-        expect(subject.size).to be_zero
-      end
-    end
-  end
-
   describe '#swap' do
     it { is_expected.to respond_to(:swap) }
 
     context 'with no elements' do
       it "doesn't modify store" do
         subject.swap
+        expect(subject.size).to be_zero
+      end
+    end
+  end
+
+  describe '#size' do
+    context 'with no elements' do
+      it { expect(subject.size).to be_zero }
+
+      it 'returns 0 after pop' do
+        subject.pop
         expect(subject.size).to be_zero
       end
     end
