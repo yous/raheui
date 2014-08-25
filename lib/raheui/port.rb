@@ -7,5 +7,8 @@ module Raheui
 
     # Do nothing with pop.
     def pop; end
+
+    # Do nothing with swap.
+    def swap; end
   end
 end

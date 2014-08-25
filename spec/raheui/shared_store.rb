@@ -35,6 +35,8 @@ shared_examples 'a store' do
   end
 
   describe '#swap' do
+    it { is_expected.to respond_to(:swap) }
+
     context 'with no elements' do
       it "doesn't modify store" do
         subject.swap

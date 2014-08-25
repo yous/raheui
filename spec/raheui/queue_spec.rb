@@ -120,7 +120,7 @@ describe Raheui::Queue do
         subject.push(two)
       end
 
-      it 'swaps the last two elements' do
+      it 'swaps the first two elements' do
         subject.swap
         expect(subject.pop).to be(two)
         expect(subject.pop).to be(one)
@@ -138,11 +138,11 @@ describe Raheui::Queue do
         subject.push(three)
       end
 
-      it 'swaps the last two elements' do
+      it 'swaps the first two elements' do
         subject.swap
+        expect(subject.pop).to be(two)
         expect(subject.pop).to be(one)
         expect(subject.pop).to be(three)
-        expect(subject.pop).to be(two)
       end
     end
   end

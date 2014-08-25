@@ -9,5 +9,10 @@ module Raheui
     def pop
       @store.shift
     end
+
+    # Swap the first two elements of Queue.
+    def swap
+      @store[0], @store[1] = @store[1], @store[0] if size > 1
+    end
   end
 end
