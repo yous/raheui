@@ -38,7 +38,7 @@ raheui -h
 ```
 
 Command flag    | Description
--------------------------------------
+----------------|--------------------
 `-h, --help`    | Print this message.
 `-v, --version` | Print version.
 
