@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Raheui::Version::STRING
   spec.authors       = ['ChaYoung You']
   spec.email         = ['yousbe@gmail.com']
-  spec.summary       = 'Aheui in Ruby.'
-  spec.description   = 'Aheui in Ruby.'
+  spec.summary       = 'Aheui interpreter in Ruby.'
+  spec.description   = 'Aheui interpreter in Ruby.'
   spec.homepage      = ''
   spec.license       = 'MIT'
 

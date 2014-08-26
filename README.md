@@ -6,4 +6,6 @@
 [![Coverage Status](https://img.shields.io/coveralls/yous/raheui.svg)](https://coveralls.io/r/yous/raheui)
 [![Inline docs](http://inch-ci.org/github/yous/raheui.svg?branch=master)](http://inch-ci.org/github/yous/raheui)
 
-Aheui in Ruby.
+[Aheui][] interpreter in Ruby.
+
+[Aheui]: http://aheui.github.io
