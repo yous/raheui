@@ -9,3 +9,56 @@
 [Aheui][] interpreter in Ruby.
 
 [Aheui]: http://aheui.github.io
+
+## Installation
+
+``` sh
+gem install raheui
+```
+
+## Usage
+
+Pass `raheui` a file to execute:
+
+``` sh
+raheui helloworld.aheui
+```
+
+Alternatively you can run `raheui` with no arguments to pass aheui code through terminal input.
+
+``` sh
+raheui
+```
+
+For additional command-line options:
+
+``` sh
+raheui -h
+```
+
+Command flag    | Description
+-------------------------------------
+`-h, --help`    | Print this message.
+`-v, --version` | Print version.
+
+## Commit message in Aheui
+
+Why don't you just try:
+
+``` sh
+git log --format=%b -n 1 | raheui
+```
+
+Also it works for every commit hash:
+
+``` sh
+git log --format=%b -n 1 <commit> | raheui
+```
+
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md).
+
+## License
+
+Copyright (c) 2014 ChaYoung You. See [LICENSE.txt](LICENSE.txt) for details.
