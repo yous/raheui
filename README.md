@@ -1,5 +1,6 @@
 # Raheui
 
+[![Gem Version](https://badge.fury.io/rb/raheui.svg)](http://badge.fury.io/rb/raheui)
 [![Build Status](https://travis-ci.org/yous/raheui.svg?branch=master)](https://travis-ci.org/yous/raheui)
 [![Dependency Status](https://gemnasium.com/yous/raheui.svg)](https://gemnasium.com/yous/raheui)
 [![Code Climate](https://codeclimate.com/github/yous/raheui/badges/gpa.svg)](https://codeclimate.com/github/yous/raheui)
