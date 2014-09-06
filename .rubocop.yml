@@ -12,3 +12,6 @@ Style/AsciiComments:
     - 'lib/raheui/code.rb'
     - 'lib/raheui/runner.rb'
     - 'spec/raheui/code_spec.rb'
+
+Style/Encoding:
+  Enabled: true
