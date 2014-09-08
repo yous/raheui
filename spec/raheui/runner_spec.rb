@@ -1,4 +1,5 @@
 # encoding: utf-8
+
 require 'spec_helper'
 
 shared_examples 'a runner' do

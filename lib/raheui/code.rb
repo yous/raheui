@@ -1,4 +1,5 @@
 # encoding: utf-8
+
 module Raheui
   # Store code object.
   class Code

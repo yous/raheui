@@ -1,4 +1,5 @@
 # encoding: utf-8
+
 module Raheui
   # Queue class for Aheui.
   class Queue < Store

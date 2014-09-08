@@ -1,4 +1,5 @@
 # encoding: utf-8
+
 module Raheui
   # IO methods for user input and output.
   module IO

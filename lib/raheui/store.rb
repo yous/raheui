@@ -1,4 +1,5 @@
 # encoding: utf-8
+
 module Raheui
   # Base Store class for Aheui. Every child classes should implement push, pop
   # and swap method.

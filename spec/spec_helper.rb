@@ -1,4 +1,5 @@
 # encoding: utf-8
+
 if ENV['TRAVIS'] || ENV['COVERAGE']
   require 'simplecov'
 

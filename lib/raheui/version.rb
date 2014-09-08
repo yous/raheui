@@ -1,4 +1,5 @@
 # encoding: utf-8
+
 module Raheui
   # Holds the Raheui version information.
   module Version

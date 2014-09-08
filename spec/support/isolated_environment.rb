@@ -1,4 +1,5 @@
 # encoding: utf-8
+
 require 'tmpdir'
 
 shared_context 'isolated environment' do
