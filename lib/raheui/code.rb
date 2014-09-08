@@ -92,9 +92,9 @@ module Raheui
     # Returns an Array of index of consonants or empty Array if the character is
     #   not an Korean alphabet.
     def consonants(ch)
-      case ch
-      when '가'..'힣'
-        index = ch.ord - '가'.ord
+      case ch.ord
+      when 44_032..55_203 # '가'..'힣'
+        index = ch.ord - 44_032 # 가
         [index / (MEDIAL_CONSONANTS * FINAL_CONSONANTS),
          (index / FINAL_CONSONANTS) % MEDIAL_CONSONANTS,
          index % FINAL_CONSONANTS]
