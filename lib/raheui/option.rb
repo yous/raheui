@@ -1,5 +1,7 @@
 # encoding: utf-8
 
+require 'optparse'
+
 module Raheui
   # Handle command line options.
   class Option
