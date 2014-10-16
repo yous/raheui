@@ -6,6 +6,7 @@
 [![Code Climate](https://codeclimate.com/github/yous/raheui/badges/gpa.svg)](https://codeclimate.com/github/yous/raheui)
 [![Coverage Status](https://img.shields.io/coveralls/yous/raheui.svg)](https://coveralls.io/r/yous/raheui)
 [![Inline docs](http://inch-ci.org/github/yous/raheui.svg?branch=master)](http://inch-ci.org/github/yous/raheui)
+[![raheui API Documentation](https://www.omniref.com/ruby/gems/raheui.png)](https://www.omniref.com/ruby/gems/raheui)
 
 [Aheui][] interpreter in Ruby.
 
