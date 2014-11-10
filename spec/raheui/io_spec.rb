@@ -10,7 +10,7 @@ describe Raheui::IO do
 
     it 'reads an integer' do
       allow($stdin).to receive(:gets).with(no_args).once
-                                     .and_return("#{value}\n")
+        .and_return("#{value}\n")
       expect(subject.read_int).to be(value)
     end
   end
@@ -21,7 +21,7 @@ describe Raheui::IO do
     it 'reads an ASCII code' do
       [0, *32..126].each do |value|
         allow($stdin).to receive(:getc).with(no_args).once
-                                       .and_return(value.chr)
+          .and_return(value.chr)
         expect(subject.read_chr).to be(value)
       end
     end
@@ -29,7 +29,7 @@ describe Raheui::IO do
     it 'reads an control character' do
       [*1..31, *127..159].each do |value|
         allow($stdin).to receive(:getc).with(no_args).once
-                                       .and_return(value.chr)
+          .and_return(value.chr)
         expect(subject.read_chr).to be(value)
       end
     end
@@ -40,7 +40,7 @@ describe Raheui::IO do
        *10.times.map { rand(0xE000..0x10FFFF).chr(Encoding::UTF_8) }.uniq,
        '가', 'あ', '漢', '　', 'å', '★'].each do |chr|
         allow($stdin).to receive(:getc).with(no_args).once
-                                       .and_return(chr)
+          .and_return(chr)
         expect(subject.read_chr).to be(chr.ord)
       end
     end

@@ -175,8 +175,8 @@ module Raheui
       delta = MEDIAL_DELTAS[medial]
       if delta
         x, y = delta
-        x = x == :+ ? @delta.x : -@delta.x if x.is_a? Symbol
-        y = y == :+ ? @delta.y : -@delta.y if y.is_a? Symbol
+        x = x == :+ ? @delta.x : -@delta.x if x.is_a?(Symbol)
+        y = y == :+ ? @delta.y : -@delta.y if y.is_a?(Symbol)
         [x, y]
       else
         [@delta.x, @delta.y]
