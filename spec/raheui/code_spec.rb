@@ -99,8 +99,8 @@ describe Raheui::Code do
             medial * FINAL_CONSONANTS +
             final
         ).chr(Encoding::UTF_8)
-        expect(consonants.call(alphabet)).to match_array(
-                                               [initial, medial, final])
+        expect(consonants.call(alphabet))
+          .to match_array([initial, medial, final])
       end
     end
 

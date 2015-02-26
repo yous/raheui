@@ -6,9 +6,9 @@ describe Raheui::Store do
 
   describe '#initialize' do
     it 'raises NotImplementedError' do
-      expect { subject }.to raise_error(
-                              NotImplementedError,
-                              format(error_msg, base_methods.join(', ')))
+      expect { subject }
+        .to raise_error(NotImplementedError,
+                        format(error_msg, base_methods.join(', ')))
     end
 
     context 'with implemented push' do
@@ -19,9 +19,9 @@ describe Raheui::Store do
 
       it 'raises NotImplementedError' do
         expect(base_methods - methods).to contain_exactly(:push)
-        expect { subject }.to raise_error(
-                                NotImplementedError,
-                                format(error_msg, methods.join(', ')))
+        expect { subject }
+          .to raise_error(NotImplementedError,
+                          format(error_msg, methods.join(', ')))
       end
     end
 
@@ -33,9 +33,9 @@ describe Raheui::Store do
 
       it 'raises NotImplementedError' do
         expect(base_methods - methods).to contain_exactly(:pop)
-        expect { subject }.to raise_error(
-                                NotImplementedError,
-                                format(error_msg, methods.join(', ')))
+        expect { subject }
+          .to raise_error(NotImplementedError,
+                          format(error_msg, methods.join(', ')))
       end
     end
 
@@ -47,9 +47,9 @@ describe Raheui::Store do
 
       it 'raises NotImplementedError' do
         expect(base_methods - methods).to contain_exactly(:swap)
-        expect { subject }.to raise_error(
-                                NotImplementedError,
-                                format(error_msg, methods.join(', ')))
+        expect { subject }
+          .to raise_error(NotImplementedError,
+                          format(error_msg, methods.join(', ')))
       end
     end
 
