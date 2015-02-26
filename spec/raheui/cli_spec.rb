@@ -5,11 +5,9 @@ require 'spec_helper'
 describe Raheui::CLI do
   include FileHelper
   include_context 'isolated environment'
+  include_context 'mocked stdout'
 
   subject(:cli) { described_class.new }
-
-  before(:example) { $stdout = StringIO.new }
-  after(:example) { $stdout = STDOUT }
 
   it 'runs aheui file passed as an argument' do
     create_file('helloworld.aheui', %w(밤밣따빠밣밟따뿌

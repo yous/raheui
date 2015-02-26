@@ -4,11 +4,9 @@ require 'spec_helper'
 
 describe Raheui::Option do
   include ExitCodeMatchers
+  include_context 'mocked stdout'
 
   subject(:option) { described_class.new }
-
-  before(:example) { $stdout = StringIO.new }
-  after(:example) { $stdout = STDOUT }
 
   describe 'option' do
     describe '-h/--help' do
