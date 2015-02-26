@@ -53,6 +53,11 @@ module Raheui
     #
     # Returns nothing.
     def self.print_chr(value)
+      # See https://github.com/jruby/jruby/issues/1921.
+      if RUBY_PLATFORM == 'java' &&
+         (0xD800 <= value && value <= 0xDFFF || value > 0x10_FFFF)
+        fail RangeError, "invalid codepoint 0x#{value.to_s(16).upcase} in UTF-8"
+      end
       $stdout.print value.chr(Encoding::UTF_8)
     rescue RangeError
       $stdout.print format('[U+%04X]', value)
