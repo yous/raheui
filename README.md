@@ -48,10 +48,10 @@ Command flag    | Description
 Why don't you just try:
 
 ``` sh
-git log --format=%b -n 1 | raheui
+git log --format=%b -n 1 d176df4 | raheui
 ```
 
-Also it works for every commit hash:
+Also it works for every commit hash in `d176df4..5a6bfd0`:
 
 ``` sh
 git log --format=%b -n 1 <commit> | raheui
