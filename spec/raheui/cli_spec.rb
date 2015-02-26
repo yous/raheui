@@ -1,7 +1,5 @@
 # encoding: utf-8
 
-require 'spec_helper'
-
 describe Raheui::CLI do
   include FileHelper
   include_context 'isolated environment'

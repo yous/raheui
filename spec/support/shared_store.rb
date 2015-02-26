@@ -1,7 +1,5 @@
 # encoding: utf-8
 
-require 'spec_helper'
-
 shared_examples 'a store' do
   describe '#push' do
     it { is_expected.to respond_to(:push) }

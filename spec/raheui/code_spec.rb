@@ -1,7 +1,5 @@
 # encoding: utf-8
 
-require 'spec_helper'
-
 describe Raheui::Code do
   shared_examples 'a code' do
     subject(:code) { Raheui::Code.new(code_str) }

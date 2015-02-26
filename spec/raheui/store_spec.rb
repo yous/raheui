@@ -1,7 +1,5 @@
 # encoding: utf-8
 
-require 'spec_helper'
-
 describe Raheui::Store do
   let(:base_methods) { Raheui::Store.const_get(:BASE_METHODS) }
   let(:error_msg) { 'base methods are not implemented: %s' }
