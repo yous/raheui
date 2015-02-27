@@ -63,4 +63,4 @@ See [CHANGELOG.md](CHANGELOG.md).
 
 ## License
 
-Copyright (c) 2014 ChaYoung You. See [LICENSE.txt](LICENSE.txt) for details.
+Copyright (c) 2014-2015 ChaYoung You. See [LICENSE.txt](LICENSE.txt) for details.
