@@ -70,7 +70,7 @@ module Raheui
     # Returns an Array consists of consonants or an empty Array when there is no
     #   element in the position.
     def [](x, y)
-      @matrix.fetch(y, []).fetch(x, [])
+      (@matrix[y] || [])[x] || []
     end
 
     private
