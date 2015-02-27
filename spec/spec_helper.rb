@@ -9,7 +9,9 @@ if ENV['TRAVIS'] || ENV['COVERAGE']
   end
 
   SimpleCov.start do
+    add_filter '/benchmark/'
     add_filter '/spec/'
+    add_filter '/vendor/'
   end
 end
 
