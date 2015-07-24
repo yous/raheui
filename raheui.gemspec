@@ -7,7 +7,7 @@ require 'raheui/version'
 Gem::Specification.new do |spec|
   spec.name          = 'raheui'
   spec.version       = Raheui::Version::STRING
-  spec.authors       = ['ChaYoung You']
+  spec.authors       = ['Chayoung You']
   spec.email         = ['yousbe@gmail.com']
   spec.summary       = 'Aheui interpreter in Ruby.'
   spec.description   = 'Aheui interpreter in Ruby.'
