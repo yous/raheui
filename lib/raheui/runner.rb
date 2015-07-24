@@ -75,7 +75,7 @@ module Raheui
         initial, medial, final = consonants
         @delta.x, @delta.y = delta(medial)
         if @selected_store.size < REQUIRED_STORE_SIZE[initial]
-          @delta.x, @delta.y = -@delta.x, -@delta.y
+          turn
         else
           process(initial, final)
         end
@@ -128,7 +128,7 @@ module Raheui
         @selected_store.push(op2 >= op1 ? 1 : 0)
       when 14 # ㅊ
         op = @selected_store.pop
-        @delta.x, @delta.y = -@delta.x, -@delta.y if op == 0
+        turn if op == 0
       when 16 # ㅌ
         operate(:-)
       when 17 # ㅍ
@@ -190,6 +190,14 @@ module Raheui
     def move
       @cursor.x = wrap(@cursor.x + @delta.x, @code.width)
       @cursor.y = wrap(@cursor.y + @delta.y, @code.height)
+    end
+
+    # Reverse the direction of the cursor.
+    #
+    # Returns nothing.
+    def turn
+      @delta.x = -@delta.x
+      @delta.y = -@delta.y
     end
 
     # Wrap a number to be between 0 and max value excluding max value. If the

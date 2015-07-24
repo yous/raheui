@@ -69,7 +69,6 @@ describe Raheui::Runner, 'with border.aheui' do
 end
 
 describe Raheui::Runner, 'with chieut.aheui' do
-  # rubocop:disable Metrics/LineLength
   let(:source) { <<-END }
 아ㅇㅇ부
 희멍번처붇
@@ -78,7 +77,6 @@ describe Raheui::Runner, 'with chieut.aheui' do
 ㅇㅇㅇ희멍
 ㅊ은 조건 명령으로 저장공간에서 값 하나를 뽑아내서 그 값이 0이 아니면 홀소리의 방향대로, 0이면 그 반대 방향대로 갑니다.
   END
-  # rubocop:enable Metrics/LineLength
 
   let(:result) { '33' }
   let(:exit_code) { 0 }
@@ -87,13 +85,11 @@ describe Raheui::Runner, 'with chieut.aheui' do
 end
 
 describe Raheui::Runner, 'with default-storage.aheui' do
-  # rubocop:disable Metrics/LineLength
   let(:source) { <<-END }
 밞산바삳바사망희
 
 처음에 선택되어 있는 스택은 (받침 없음) 스택입니다. (“사” 와 같은 명령으로 선택할 수 있습니다.)
   END
-  # rubocop:enable Metrics/LineLength
 
   let(:result) { '9' }
   let(:exit_code) { 0 }
@@ -102,13 +98,11 @@ describe Raheui::Runner, 'with default-storage.aheui' do
 end
 
 describe Raheui::Runner, 'with digeut.aheui' do
-  # rubocop:disable Metrics/LineLength
   let(:source) { <<-END }
 반받다망희
 
 ㄷ은 덧셈 명령으로 저장공간에서 두 값을 뽑아낸 다음 둘을 더한 값을 저장공간에 집어넣습니다.
   END
-  # rubocop:enable Metrics/LineLength
 
   let(:result) { '5' }
   let(:exit_code) { 0 }
@@ -132,13 +126,11 @@ describe Raheui::Runner, 'with exhausted-storage.aheui' do
 end
 
 describe Raheui::Runner, 'with exitcode.aheui' do
-  # rubocop:disable Metrics/LineLength
   let(:source) { <<-END }
 반월회
 
 ㅎ은 끝냄 명령으로 커서의 실행을 끝냅니다. 이 때 스택에서 맨 위 값을 뽑아서 운영체제에 돌려 줍니다.
   END
-  # rubocop:enable Metrics/LineLength
 
   let(:result) { '' }
   let(:exit_code) { 2 }
@@ -147,14 +139,12 @@ describe Raheui::Runner, 'with exitcode.aheui' do
 end
 
 describe Raheui::Runner, 'with ieunghiheuit.aheui' do
-  # rubocop:disable Metrics/LineLength
   let(:source) { <<-END }
 아악안앋압알앗았앜앇헐
 
 ㅇ은 없음 명령으로 아무 일도 하지 않습니다. * ㅎ은 끝냄 명령으로 커서의 실행을 끝냅니다.
 사용되지 않는 받침은 모두 무시됩니다.
   END
-  # rubocop:enable Metrics/LineLength
 
   let(:result) { '' }
   let(:exit_code) { 0 }
@@ -209,13 +199,11 @@ describe Raheui::Runner, 'with mieum.aheui' do
 end
 
 describe Raheui::Runner, 'with nieun.aheui' do
-  # rubocop:disable Metrics/LineLength
   let(:source) { <<-END }
 밟받나망희
 
 ㄴ은 나눗셈 명령으로 저장공간에서 두 값을 뽑아낸 다음 나중 값에서 먼저 값을 나눈 값을 저장공간에 집어넣습니다.
   END
-  # rubocop:enable Metrics/LineLength
 
   let(:result) { '3' }
   let(:exit_code) { 0 }
@@ -224,7 +212,6 @@ describe Raheui::Runner, 'with nieun.aheui' do
 end
 
 describe Raheui::Runner, 'with pieup.aheui' do
-  # rubocop:disable Metrics/LineLength
   let(:source) { <<-END }
 바밟밟땅밝밝땅팡망망우
 숭ㅇㅇㅇㅇㅇㅇㅇㅇㅇ어
@@ -232,7 +219,6 @@ describe Raheui::Runner, 'with pieup.aheui' do
 
 ㅍ은 바꿔치기 명령입니다. 지금 저장공간이 스택이라면 맨 위 값과 그 바로 아래 값을, 큐라면 맨 앞의 값과 그 바로 뒤 값을 바꿉니다.
   END
-  # rubocop:enable Metrics/LineLength
 
   let(:result) { '81494981' }
   let(:exit_code) { 0 }
@@ -241,14 +227,12 @@ describe Raheui::Runner, 'with pieup.aheui' do
 end
 
 describe Raheui::Runner, 'with print.aheui' do
-  # rubocop:disable Metrics/LineLength
   let(:source) { <<-END }
 밞밞반다따반타뭉
 ㅇㅇㅇㅇㅇㅇㅇ밞밞반다따반타맣희
 
 ㅁ에 ㅇ받침이 있으면 저장공간에서 뽑아낸 값을 숫자로, ㅎ받침이 있으면 그 값에 해당하는 유니코드 문자로 출력합니다.
   END
-  # rubocop:enable Metrics/LineLength
 
   let(:result) { '97a' }
   let(:exit_code) { 0 }
@@ -270,13 +254,11 @@ describe Raheui::Runner, 'with queue.aheui' do
 end
 
 describe Raheui::Runner, 'with rieul.aheui' do
-  # rubocop:disable Metrics/LineLength
   let(:source) { <<-END }
 밟발라망희
 
 ㄹ은 나머지 명령으로 저장공간에서 두 값을 뽑아낸 다음 나중 값에서 먼저 값을 나눈 나머지를 저장공간에 집어넣습니다.
   END
-  # rubocop:enable Metrics/LineLength
 
   let(:result) { '4' }
   let(:exit_code) { 0 }
@@ -301,13 +283,11 @@ describe Raheui::Runner, 'with shebang.aheui' do
 end
 
 describe Raheui::Runner, 'with ssangbieup.aheui' do
-  # rubocop:disable Metrics/LineLength
   let(:source) { <<-END }
 밟밟땅빵망망희
 
 ㅃ은 중복 명령입니다. 지금 저장공간이 스택이라면 맨 위의 값을 그 값 위에 하나 더 집어넣고, 큐라면 맨 앞의 값을 앞에 하나 더 덧붙입니다.
   END
-  # rubocop:enable Metrics/LineLength
 
   let(:result) { '8181' }
   let(:exit_code) { 0 }
@@ -316,13 +296,11 @@ describe Raheui::Runner, 'with ssangbieup.aheui' do
 end
 
 describe Raheui::Runner, 'with ssangdigeut.aheui' do
-  # rubocop:disable Metrics/LineLength
   let(:source) { <<-END }
 발밞따망희
 
 ㄸ은 곱셈 명령으로 저장공간에서 두 값을 뽑아낸 다음 둘을 곱한 값을 저장공간에 집어넣습니다.
   END
-  # rubocop:enable Metrics/LineLength
 
   let(:result) { '45' }
   let(:exit_code) { 0 }
@@ -331,7 +309,6 @@ describe Raheui::Runner, 'with ssangdigeut.aheui' do
 end
 
 describe Raheui::Runner, 'with ssangsiot.aheui' do
-  # rubocop:disable Metrics/LineLength
   let(:source) { <<-END }
 아바싹반싼받싿우
 우멍석멍선멍섣어
@@ -354,7 +331,6 @@ describe Raheui::Runner, 'with ssangsiot.aheui' do
 
 ㅆ은 이동 명령으로 저장공간에서 값 하나를 뽑아내서 받침이 나타내는 저장공간에 그 값을 집어 넣습니다.
   END
-  # rubocop:enable Metrics/LineLength
 
   let(:result) { '320320320320320320320320320' }
   let(:exit_code) { 0 }
@@ -424,13 +400,11 @@ describe Raheui::Runner, 'with syllable.aheui' do
 end
 
 describe Raheui::Runner, 'with tieut.aheui' do
-  # rubocop:disable Metrics/LineLength
   let(:source) { <<-END }
 받반타망희
 
 ㅌ은 뺄셈 명령으로 저장공간에서 두 값을 뽑아낸 다음 나중 값에서 먼저 값을 뺀 값을 저장공간에 집어넣습니다.
   END
-  # rubocop:enable Metrics/LineLength
 
   let(:result) { '1' }
   let(:exit_code) { 0 }
@@ -494,7 +468,6 @@ describe Raheui::Runner, 'with vowel-basic.aheui' do
 end
 
 describe Raheui::Runner, 'with vowel-useless.aheui' do
-  # rubocop:disable Metrics/LineLength
   let(:source) { <<-END }
 우아앙배벤뱯볩뷜뫙뫵뮝뭥뮁우
 배맹희맹멩먱몡뮝봘봽붣붠붸어
@@ -511,7 +484,6 @@ describe Raheui::Runner, 'with vowel-useless.aheui' do
 
 기능 없음: ㅐ ㅔ ㅒ ㅖ ㅘ ㅙ ㅚ ㅝ ㅞ ㅟ (커서가 이동하는 방향은 변하지 않습니다.)
   END
-  # rubocop:enable Metrics/LineLength
 
   let(:result) { '54320543205432054320' }
   let(:exit_code) { 0 }
@@ -520,7 +492,6 @@ describe Raheui::Runner, 'with vowel-useless.aheui' do
 end
 
 describe Raheui::Runner, 'with vowel-useless2.aheui' do
-  # rubocop:disable Metrics/LineLength
   let(:source) { <<-END }
 와아앙배벤뱯볩뷜뫙뫵뮝뭥뮁우
 배맹희맹멩먱몡뮝봘봽붣붠붸어
@@ -537,7 +508,6 @@ describe Raheui::Runner, 'with vowel-useless2.aheui' do
 
 기능 없음: ㅐ ㅔ ㅒ ㅖ ㅘ ㅙ ㅚ ㅝ ㅞ ㅟ (커서가 이동하는 방향은 변하지 않습니다.)
   END
-  # rubocop:enable Metrics/LineLength
 
   let(:result) { '54320543205432054320' }
   let(:exit_code) { 0 }
