@@ -30,7 +30,6 @@ end
 describe Raheui::Runner, 'with bieup.aheui' do
   # rubocop:disable Metrics/LineLength
   let(:source) { <<-END }
-숭
 박반받발밤밥밧밪밫밬밭붚
 뭉멍멍멍멍멍멍멍멍멍멍멍
 밖밗밙밚밝밞밟밠밡밢밣밦붔
@@ -44,7 +43,7 @@ describe Raheui::Runner, 'with bieup.aheui' do
   # rubocop:enable Metrics/LineLength
 
   let(:inputs) { %w(3 밯) }
-  let(:result) { '2235442343444455799799864348175' }
+  let(:result) { '4434324453224689979975544481753' }
   let(:exit_code) { 0 }
 
   it_behaves_like 'a runner'
@@ -178,6 +177,22 @@ describe Raheui::Runner, 'with jieut.aheui' do
   it_behaves_like 'a runner'
 end
 
+describe Raheui::Runner, 'with loop.aheui' do
+  let(:source) { <<-END }
+밦밦따빠뚜
+뿌뚜뻐뚜뻐
+따ㅇㅇㅇ우
+ㅇㅇ아ㅇ분
+ㅇㅇ초뻐터
+ㅇㅇ망희
+  END
+
+  let(:result) { '0' }
+  let(:exit_code) { 0 }
+
+  it_behaves_like 'a runner'
+end
+
 describe Raheui::Runner, 'with mieum.aheui' do
   # rubocop:disable Metrics/LineLength
   let(:source) { <<-END }
@@ -236,6 +251,19 @@ describe Raheui::Runner, 'with print.aheui' do
   # rubocop:enable Metrics/LineLength
 
   let(:result) { '97a' }
+  let(:exit_code) { 0 }
+
+  it_behaves_like 'a runner'
+end
+
+describe Raheui::Runner, 'with queue.aheui' do
+  let(:source) { <<-END }
+상반받뱔우망이
+뭉뻐벋번성
+망망희
+  END
+
+  let(:result) { '235223' }
   let(:exit_code) { 0 }
 
   it_behaves_like 'a runner'
@@ -411,15 +439,18 @@ describe Raheui::Runner, 'with tieut.aheui' do
 end
 
 describe Raheui::Runner, 'with vowel-2step.aheui' do
+  # rubocop:disable Metrics/LineLength
   let(:source) { <<-END }
-뷷우우우희우명
-아아아아아아아
-먕오뱞오먕오뵯
+뷷우희어밍우여
+아아아아아아아반받망희
+먕오뱞오뱗오뵬
 
 ㅑ, ㅕ, ㅛ, ㅠ - 커서를 각각 오른쪽, 왼쪽, 위, 아래로 두 칸 옮깁니다.
+중복 명령을 포함한 모든 뽑아내기를 쓰는 명령에서 저장 공간에 값이 모자랄 경우, 커서는 그 명령을 실행하지 않고 커서가 있는 글자의 홀소리의 반대방향으로 움직입니다.
   END
+  # rubocop:enable Metrics/LineLength
 
-  let(:result) { '369' }
+  let(:result) { '3596' }
   let(:exit_code) { 0 }
 
   it_behaves_like 'a runner'
