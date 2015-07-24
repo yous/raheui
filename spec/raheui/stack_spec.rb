@@ -83,13 +83,22 @@ describe Raheui::Stack do
         expect(subject.pop).to be(element)
         expect(subject.pop).to be(element)
       end
+    end
+
+    context 'with more than one element' do
+      let(:one) { rand(10) }
+      let(:two) { rand(10...20) }
+
+      before(:example) do
+        subject.push(one)
+        subject.push(two)
+      end
 
       it 'pushes last pushed element' do
-        subject.push(42)
         subject.push_dup
-        expect(subject.pop).to be(42)
-        expect(subject.pop).to be(42)
-        expect(subject.pop).to be(element)
+        expect(subject.pop).to be(two)
+        expect(subject.pop).to be(two)
+        expect(subject.pop).to be(one)
       end
     end
   end

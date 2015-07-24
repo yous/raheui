@@ -8,7 +8,7 @@ module Raheui
   class Store
     extend Forwardable
 
-    BASE_METHODS = [:push, :pop, :swap]
+    BASE_METHODS = [:push, :pop, :push_dup, :swap]
     private_constant :BASE_METHODS
 
     # Delegates size to @store.
@@ -18,11 +18,6 @@ module Raheui
     def initialize
       check_base_methods
       @store = []
-    end
-
-    # Push the last element to Store.
-    def push_dup
-      push(@store.last) if size > 0
     end
 
     private

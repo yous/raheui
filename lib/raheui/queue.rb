@@ -11,6 +11,11 @@ module Raheui
       @store.shift
     end
 
+    # Push the first element to Queue.
+    def push_dup
+      @store.unshift(@store.first) if size > 0
+    end
+
     # Swap the first two elements of Queue.
     def swap
       @store[0], @store[1] = @store[1], @store[0] if size > 1

@@ -39,6 +39,20 @@ describe Raheui::Store do
       end
     end
 
+    context 'with implemented push_dup' do
+      let(:methods) { base_methods - [:push_dup] }
+
+      before(:context) { Raheui::Store.class_eval { def push_dup; end } }
+      after(:context) { Raheui::Store.class_eval { remove_method :push_dup } }
+
+      it 'raises NotImplementedError' do
+        expect(base_methods - methods).to contain_exactly(:push_dup)
+        expect { subject }
+          .to raise_error(NotImplementedError,
+                          format(error_msg, methods.join(', ')))
+      end
+    end
+
     context 'with implemented swap' do
       let(:methods) { base_methods - [:swap] }
 
@@ -60,6 +74,8 @@ describe Raheui::Store do
 
           def pop; end
 
+          def push_dup; end
+
           def swap; end
         end
       end
@@ -68,6 +84,7 @@ describe Raheui::Store do
         Raheui::Store.class_eval do
           remove_method :push
           remove_method :pop
+          remove_method :push_dup
           remove_method :swap
         end
       end
@@ -81,12 +98,6 @@ describe Raheui::Store do
   describe '#size' do
     it 'should respond to #size' do
       expect(Raheui::Store.instance_methods(false)).to include(:size)
-    end
-  end
-
-  describe '#push_dup' do
-    it 'should respond to #push_dup' do
-      expect(Raheui::Store.instance_methods(false)).to include(:push_dup)
     end
   end
 end

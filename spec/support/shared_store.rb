@@ -14,6 +14,8 @@ shared_examples 'a store' do
   end
 
   describe '#push_dup' do
+    it { is_expected.to respond_to(:push_dup) }
+
     context 'with no elements' do
       it "doesn't push" do
         subject.push_dup

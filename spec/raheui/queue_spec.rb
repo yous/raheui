@@ -81,18 +81,27 @@ describe Raheui::Queue do
 
       before(:example) { subject.push(element) }
 
-      it 'pushes the last element' do
+      it 'pushes the first element' do
         subject.push_dup
         expect(subject.pop).to be(element)
         expect(subject.pop).to be(element)
       end
+    end
 
-      it 'pushes last pushed element' do
-        subject.push(42)
+    context 'with more than one element' do
+      let(:one) { rand(10) }
+      let(:two) { rand(10...20) }
+
+      before(:example) do
+        subject.push(one)
+        subject.push(two)
+      end
+
+      it 'pushes first pushed element' do
         subject.push_dup
-        expect(subject.pop).to be(element)
-        expect(subject.pop).to be(42)
-        expect(subject.pop).to be(42)
+        expect(subject.pop).to be(one)
+        expect(subject.pop).to be(one)
+        expect(subject.pop).to be(two)
       end
     end
   end
