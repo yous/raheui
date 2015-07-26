@@ -6,11 +6,15 @@ rvm:
   - 2.1
   - 2.2
   - ruby-head
-  - jruby-19mode
-  - jruby-9.0.0.0
-  - jruby-head
   - rbx-2
 matrix:
+  include:
+    - rvm: jruby-19mode
+      env: JRUBY_OPTS="-Xcli.debug=true --debug"
+    - rvm: jruby-9.0.0.0
+      env: JRUBY_OPTS="-Xcli.debug=true --debug"
+    - rvm: jruby-head
+      env: JRUBY_OPTS="-Xcli.debug=true --debug"
   allow_failures:
     - rvm: ruby-head
     - rvm: jruby-19mode
