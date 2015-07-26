@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.3 (2015-07-27)
+
+- Fix implementation of `Queue#push_dup`
+- Add tests for undefined specifications
+
 ## 1.0.2 (2015-02-27)
 
 - Support JRuby
