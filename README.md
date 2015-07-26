@@ -4,7 +4,7 @@
 [![Build Status](https://travis-ci.org/yous/raheui.svg?branch=master)](https://travis-ci.org/yous/raheui)
 [![Dependency Status](https://gemnasium.com/yous/raheui.svg)](https://gemnasium.com/yous/raheui)
 [![Code Climate](https://codeclimate.com/github/yous/raheui/badges/gpa.svg)](https://codeclimate.com/github/yous/raheui)
-[![Coverage Status](https://img.shields.io/coveralls/yous/raheui.svg)](https://coveralls.io/r/yous/raheui)
+[![Coverage Status](http://coveralls.io/repos/yous/raheui/badge.svg?branch=master&service=github)](http://coveralls.io/github/yous/raheui?branch=master)
 [![Inline docs](http://inch-ci.org/github/yous/raheui.svg?branch=master)](http://inch-ci.org/github/yous/raheui)
 [![raheui API Documentation](https://www.omniref.com/ruby/gems/raheui.png)](https://www.omniref.com/ruby/gems/raheui)
 
