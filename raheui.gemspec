@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.email         = ['yousbe@gmail.com']
   spec.summary       = 'Aheui interpreter in Ruby.'
   spec.description   = 'Aheui interpreter in Ruby.'
-  spec.homepage      = ''
+  spec.homepage      = 'https://github.com/yous/raheui'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0")
