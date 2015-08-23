@@ -10,7 +10,7 @@ module Raheui
     REQUIRED_STORE_SIZE = [
       0, 0, 2, 2, 2, 2, 1, 0, 1, 0, # ㄱ ㄲ ㄴ ㄷ ㄸ ㄹ ㅁ ㅂ ㅃ ㅅ
       1, 0, 2, 0, 1, 0, 2, 2, 0     # ㅆ ㅇ ㅈ ㅉ ㅊ ㅋ ㅌ ㅍ ㅎ
-    ]
+    ].freeze
 
     # Delta values of each medial consonant.
     MEDIAL_DELTAS = [
@@ -19,7 +19,7 @@ module Raheui
       [0, -1], nil, nil, nil, [0, -2], # ㅗ ㅘ ㅙ ㅚ ㅛ
       [0, 1], nil, nil, nil, [0, 2],   # ㅜ ㅝ ㅞ ㅟ ㅠ
       [:+, :-], [:-, :-], [:-, :+]     # ㅡ ㅢ ㅣ
-    ]
+    ].freeze
 
     # Numbers of strokes of each final consonant.
     FINAL_STROKES = [
@@ -27,7 +27,7 @@ module Raheui
       2, 4, 4, 2, 5, 5, 3, 5, 7, 9, # ㄱ ㄲ ㄳ ㄴ ㄵ ㄶ ㄷ ㄹ ㄺ ㄻ
       9, 7, 9, 9, 8, 4, 4, 6, 2, 4, # ㄼ ㄽ ㄾ ㄿ ㅀ ㅁ ㅂ ㅄ ㅅ ㅆ
       1, 3, 4, 3, 4, 4, 3           # ㅇ ㅈ ㅊ ㅋ ㅌ ㅍ ㅎ
-    ]
+    ].freeze
 
     private_constant :REQUIRED_STORE_SIZE, :MEDIAL_DELTAS, :FINAL_STROKES
 

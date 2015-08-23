@@ -27,6 +27,14 @@ shared_examples 'a runner' do
   end
 end
 
+describe Raheui::Runner do
+  it 'has frozen constants' do
+    expect(described_class.const_get(:REQUIRED_STORE_SIZE)).to be_frozen
+    expect(described_class.const_get(:MEDIAL_DELTAS)).to be_frozen
+    expect(described_class.const_get(:FINAL_STROKES)).to be_frozen
+  end
+end
+
 describe 'standard specifications' do
   describe Raheui::Runner, 'with bieup.aheui' do
     # rubocop:disable Metrics/LineLength
